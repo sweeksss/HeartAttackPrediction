@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Page</title>
+    
+    <style>
+        body {
+            background-image: url("{% static 'HeartAttack/images/ND-magazine-para-blog-septiembre-2021-03-heart.jpg' %}");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        .main{
+            position: fixed;
+            top: 140px;
+            left: 410px;
+            width: 550px;
+            background-color:#ffffff;
+            border-radius: 10px;
+            align-items: center;
+            padding: 5%;
+        }
+        h1{
+            color: #0086b3;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        input[type=submit]{
+            background-color: #4dc3ff;
+            border: 2px;
+            color: white;
+            padding: 8px 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>  
+<body>
+    <div align = 'center' class="main">
+        <h1> Please enter the information: </h1>
+        <form action="result">
+            <table>
+                <tr>
+                    <td align="right"><label for="age">Age:</label></td>
+                    <td align="left"><input type="number" name="n1"> </td>
+                </tr>
+                <tr>
+                    <td align="right"><label>Sex: </label> </td>
+                    <td align="left">Female<input type="range" name="n2" max="1" min="0">Male </td>
+                </tr>
+                <tr>
+                    <td align="right">Chest Pain Type (CP): </td>
+                    <td align="left">1<input type="range" name="n3" max="3" min="1">3 </td>
+                </tr>
+                <tr>
+                    <td align="right">Resting Blood Pressure (trestbps): </td>
+                    <td align="left"><input type="number" name="n4" max="200"> </td>
+                </tr>
+                <tr>
+                    <td align="right">Cholestrol (chol) </td>
+                    <td align="left"><input type="number" name="n5" max="600"> </td>
+                </tr>
+                <tr>
+                    <td align="right">Fasting Blood Sugar (fbs) </td>
+                    <td align="left">less than 120<input type="range" name="n6" max="1" max="0">more than 120</td>
+                </tr>
+                <tr>
+                    <td align="right"> Resting ECG (restecg) </td>
+                    <td align="left">0<input type="range" name="n7" max="2" min="0"> 2</td>
+                </tr>
+                <tr>
+                    <td align="right">Max Heart Rate (thalach) </td>
+                    <td align="left"><input type="number" name="n8" max="250"> </td>
+                </tr>
+                <tr>
+                    <td align="right">Excercise induced angina (exang) </td>
+                    <td align="left">Yes<input type="range" name="n9" max="1" min="0">No </td>
+                </tr>
+                <tr>
+                    <td align="right">ST depression (oldpeak): </td>
+                    <td align="left">0<input type="range" name="n10" max="2" min="0">2</td>
+                </tr>
+                <tr>
+                    <td align="right">Slope: </td>
+                    <td align="left">Downsloping<input type="range" name="n11" max="2" min="0">Upsloping</td>
+                </tr>
+                <tr>
+                    <td align="right">Number of major vessels (ca): </td>
+                    <td align="left">1<input type="range" name="n12" max="3" min="1">3</td>
+                </tr>
+                <tr>
+                    <td align="right">Thalassemia (thal): </td>
+                    <td align="left">1<input type="range" name="n13" max="3" min="1">3</td>
+                </tr>
+            </table>
+            <input type="submit">
+        </form>
+        Result:{{result2}}
+    </div>
+</body>  
+</html>
